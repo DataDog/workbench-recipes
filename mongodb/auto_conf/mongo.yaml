@@ -47,5 +47,5 @@ instances:
     # up to 8 + the number of indices on the collection for each collection
     collections:
       - restaurants
-      - hotels
+      - employees
 

@@ -6,4 +6,5 @@ services:
         com.datadoghq.sd.check.id: "mongo-dummydata"
     volumes:
       - ./provision/restaurants.json:/docker-entrypoint-initdb.d/restaurants.json:ro
+      - ./provision/employees.json:/docker-entrypoint-initdb.d/employees.json:ro
       - ./provision/import_dummy_data.sh:/docker-entrypoint-initdb.d/10_import_dummy_data.sh:ro

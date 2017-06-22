@@ -43,7 +43,7 @@ services:
     image: "mongo:${version}"
     depends_on:
       - mongo-rep1
-      - mongo-rep2      
+      - mongo-rep2
       - mongo-rep3
     volumes:
       - ./provision/:/provision/:ro
