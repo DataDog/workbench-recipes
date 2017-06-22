@@ -1,6 +1,16 @@
 # mongodb
 This workbench creates dummy data that are inserted in `dummy` database in `restaurants` collection.
 
+## Running
+* Launching mongodb standalone instance
+```bash
+COMPOSE_FILE=standalone.yaml MONGO_VERSION=3.5 docker-compose up
+```
+* Launching mongodb replicated set
+```bash
+COMPOSE_FILE=replicas3.yaml MONGO_VERSION=3.5 docker-compose up
+```
+
 ## Useful commands
 * Request data:
 ```bash

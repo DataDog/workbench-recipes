@@ -4,29 +4,19 @@ services:
     image: "mongo:${MONGO_VERSION}"
     labels:
         com.datadoghq.sd.check.id: "mongo-dummydata"
-    volumes:
-      - ./initdb.d:/docker-entrypoint-initdb.d:ro
-    environment:
-      REPLICA_ID: 1
     command:
       - mongod
       - --replSet
       - "rs0"
-      - --bind_ip_all
 
   mongo-rep2:
     image: "mongo:${MONGO_VERSION}"
     labels:
         com.datadoghq.sd.check.id: "mongo-dummydata"
-    volumes:
-      - ./initdb.d:/docker-entrypoint-initdb.d:ro
-    environment:
-      REPLICA_ID: 2
     command:
       - mongod
       - --replSet
       - "rs0"
-      - --bind_ip_all
 
   mongo-rep3:
     depends_on:
@@ -36,11 +26,10 @@ services:
     labels:
         com.datadoghq.sd.check.id: "mongo-dummydata"
     volumes:
-      - ./initdb.d:/docker-entrypoint-initdb.d:ro
-    environment:
-      REPLICA_ID: 3
+      - ./initdb.d/restaurants.json:/docker-entrypoint-initdb.d/restaurants.json:ro
+      - ./initdb.d/replica_set.sh:/docker-entrypoint-initdb.d/00_replica_set.sh:ro
+      - ./initdb.d/import_dummy_data.sh:/docker-entrypoint-initdb.d/10_import_dummy_data.sh:ro
     command:
       - mongod
       - --replSet
       - "rs0"
-      - --bind_ip_all
