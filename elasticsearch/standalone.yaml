@@ -1,9 +1,9 @@
 version: '2'
 services:
   mongo-standalone:
-    image: "mongo:${version}"
+    image: "docker.elastic.co/elasticsearch/elasticsearch:${version}"
     labels:
-        com.datadoghq.sd.check.id: "mongo-dummydata"
+        com.datadoghq.sd.check.id: "elasticsearch-dummydata"
     volumes:
       - ../_assets/json/restaurants.json:/docker-entrypoint-initdb.d/restaurants.json:ro
       - ../_assets/json/employees.json:/docker-entrypoint-initdb.d/employees.json:ro
