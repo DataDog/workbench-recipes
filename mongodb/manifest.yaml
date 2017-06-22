@@ -6,7 +6,6 @@ flavors:
     options:
       - name: version
         description: Image version to run
-        envvar: MONGO_VERSION
         values:
           - 3.0
           - 3.2
@@ -20,7 +19,6 @@ flavors:
     options:
       - name: version
         description: Image version to run
-        envvar: MONGO_VERSION
         values:
           - 3.0
           - 3.2

@@ -1,7 +1,7 @@
 version: '2'
 services:
   mongo-rep1:
-    image: "mongo:${MONGO_VERSION}"
+    image: "mongo:${version}"
     labels:
         com.datadoghq.sd.check.id: "mongo-dummydata"
     command:
@@ -10,7 +10,7 @@ services:
       - "rs0"
 
   mongo-rep2:
-    image: "mongo:${MONGO_VERSION}"
+    image: "mongo:${version}"
     labels:
         com.datadoghq.sd.check.id: "mongo-dummydata"
     command:
@@ -22,7 +22,7 @@ services:
     depends_on:
       - mongo-rep1
       - mongo-rep2
-    image: "mongo:${MONGO_VERSION}"
+    image: "mongo:${version}"
     labels:
         com.datadoghq.sd.check.id: "mongo-dummydata"
     volumes:
