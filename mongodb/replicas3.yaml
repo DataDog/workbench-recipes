@@ -7,7 +7,7 @@ services:
     volumes:
       - ./initdb.d:/docker-entrypoint-initdb.d:ro
     environment:
-      REPLICA-ID: 1
+      REPLICA_ID: 1
     command:
       - mongod
       - --replSet
@@ -21,7 +21,7 @@ services:
     volumes:
       - ./initdb.d:/docker-entrypoint-initdb.d:ro
     environment:
-      REPLICA-ID: 2
+      REPLICA_ID: 2
     command:
       - mongod
       - --replSet
@@ -38,7 +38,7 @@ services:
     volumes:
       - ./initdb.d:/docker-entrypoint-initdb.d:ro
     environment:
-      REPLICA-ID: 3
+      REPLICA_ID: 3
     command:
       - mongod
       - --replSet
