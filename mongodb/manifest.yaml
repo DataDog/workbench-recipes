@@ -2,7 +2,7 @@ name: mongodb
 flavors:
   standalone:
     description: One mongo instance with dummy data
-    compose_file: standalone.yaml
+    compose_file: standalone.compose
     options:
       version:
         description: Image version to run
@@ -15,7 +15,7 @@ flavors:
 
   replicas3:
     description: 3 mongo replicaset with dummy data
-    compose_file: replicas3.yaml
+    compose_file: 3replicas.compose
     options:
       version:
         description: Image version to run
