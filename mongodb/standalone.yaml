@@ -5,4 +5,4 @@ services:
     labels:
         com.datadoghq.sd.check.id: "mongo-dummydata"
     volumes:
-      - init.d:/docker-entrypoint-initdb.d/:ro
+      - ./initdb.d:/docker-entrypoint-initdb.d:ro
