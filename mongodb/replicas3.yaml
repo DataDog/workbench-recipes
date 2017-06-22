@@ -26,9 +26,9 @@ services:
     labels:
         com.datadoghq.sd.check.id: "mongo-dummydata"
     volumes:
-      - ./initdb.d/restaurants.json:/docker-entrypoint-initdb.d/restaurants.json:ro
-      - ./initdb.d/replica_set.sh:/docker-entrypoint-initdb.d/00_replica_set.sh:ro
-      - ./initdb.d/import_dummy_data.sh:/docker-entrypoint-initdb.d/10_import_dummy_data.sh:ro
+      - ./provision/restaurants.json:/docker-entrypoint-initdb.d/restaurants.json:ro
+      - ./provision/replica_set.sh:/docker-entrypoint-initdb.d/00_replica_set.sh:ro
+      - ./provision/import_dummy_data.sh:/docker-entrypoint-initdb.d/10_import_dummy_data.sh:ro
     command:
       - mongod
       - --replSet

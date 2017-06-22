@@ -12,6 +12,11 @@ COMPOSE_FILE=replicas3.yaml version=3.5 docker-compose up
 ```
 
 ## Useful commands
+* Get a bash on mongo
+```bash
+docker exec -it <IMAGE> bash
+```
+
 * Request data:
 ```bash
 mongo localhost:27017/dummy --eval 'db.restaurants.find()'
