@@ -1,5 +1,5 @@
 docker_images:
-  - my-java-app
+  - java-hello-world
 
 init_config:
 
