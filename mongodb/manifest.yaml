@@ -1,0 +1,29 @@
+name: mongodb
+flavors:
+  - name: standalone
+    description: One mongo instance with dummy data
+    compose_file: standalone.yaml
+    options:
+      - name: version
+        description: Image version to run
+        envvar: MONGO_VERSION
+        values:
+          - 3.0
+          - 3.2
+          - 3.4
+          - 3.5
+        default: 3.5
+
+  - name: replicas3.yaml
+    description: 3 mongo replicaset with dummy data
+    compose_file: replicas3.yaml
+    options:
+      - name: version
+        description: Image version to run
+        envvar: MONGO_VERSION
+        values:
+          - 3.0
+          - 3.2
+          - 3.4
+          - 3.5
+        default: 3.5
