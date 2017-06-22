@@ -1,0 +1,8 @@
+version: '2'
+services:
+  mongo-standalone:
+    image: "mongo:${VERSION}"
+    labels:
+        com.datadoghq.sd.check.id: "mongo-dummydata"
+    volumes:
+      - init.d:/docker-entrypoint-initdb.d/:ro
