@@ -1,0 +1,46 @@
+version: '2'
+services:
+  mongo-rep1:
+    image: "mongo:${MONGO_VERSION}"
+    labels:
+        com.datadoghq.sd.check.id: "mongo-dummydata"
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d:ro
+    environment:
+      REPLICA-ID: 1
+    command:
+      - mongod
+      - --replSet
+      - "rs0"
+      - --bind_ip_all
+
+  mongo-rep2:
+    image: "mongo:${MONGO_VERSION}"
+    labels:
+        com.datadoghq.sd.check.id: "mongo-dummydata"
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d:ro
+    environment:
+      REPLICA-ID: 2
+    command:
+      - mongod
+      - --replSet
+      - "rs0"
+      - --bind_ip_all
+
+  mongo-rep3:
+    depends_on:
+      - mongo-rep1
+      - mongo-rep2
+    image: "mongo:${MONGO_VERSION}"
+    labels:
+        com.datadoghq.sd.check.id: "mongo-dummydata"
+    volumes:
+      - ./initdb.d:/docker-entrypoint-initdb.d:ro
+    environment:
+      REPLICA-ID: 3
+    command:
+      - mongod
+      - --replSet
+      - "rs0"
+      - --bind_ip_all
