@@ -1,0 +1,8 @@
+docker_images:
+  - java-hello-world
+
+init_config:
+
+instances:
+  - host: '%%host%%'
+    port: '%%port%%'

@@ -1,0 +1,6 @@
+version: '2'
+services:
+  jmx-standalone:
+    build: .
+    labels:
+        com.datadoghq.sd.check.id: "java-hello-world"
