@@ -1,2 +1,23 @@
-# workbench-recipes
-Recipes for the Agent Workbench project
+# INTERNAL DATADOG PROJECT
+
+# Datadog workbench recipes
+
+This repo holds the docker-compose recipes for use with the `workbench` tool.
+
+# Repository structure
+
+- Every folder is a separate target software, called an **integration**
+- Each integration will provide one or several docker-compose yaml files, called **flavors**
+- Each flavor can accept one or several **options**, as environment variables
+
+Recipes can either use public docker images, or provide their own Dockerfiles that will be built on demand
+by docker-compose.
+
+# Manifest format
+
+To be defined (yaml-based)
+
+
+# Agent autodiscovery templates
+
+To be defined
