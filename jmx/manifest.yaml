@@ -1,15 +1,5 @@
-name: java-hello-world
+name: jmx
 flavors:
-  standalone:
-    description: One java image that runs a "hello world" Java script
-    compose_file: standalone.compose
-    options:
-      version:
-        description: Image version to run
-        values:
-          - 3.0
-          - 3.0-alpine
-          - 3.2
-          - 3.2-alpine
-          - 3.2-32bit
-        default: 3.2
+  helloworld:
+    description: Simple "hello world" java app with JMX enabled
+    compose_file: helloworld.compose
