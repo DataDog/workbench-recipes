@@ -39,7 +39,7 @@ services:
       - --config
       - /etc/mongo.conf
 
-  mongo-provision:
+  mongo-rep-provision:
     image: "mongo:${version}"
     depends_on:
       - mongo-rep1
@@ -50,3 +50,7 @@ services:
       - ../_assets/json:/_assets/json/:ro
     command:
       - /provision/replica_set.sh
+networks:
+  default:
+    external:
+      name: workbench

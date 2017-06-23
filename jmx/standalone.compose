@@ -4,3 +4,7 @@ services:
     build: .
     labels:
         com.datadoghq.sd.check.id: "java-hello-world"
+networks:
+  default:
+    external:
+      name: workbench

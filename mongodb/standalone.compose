@@ -13,3 +13,7 @@ services:
       - mongod
       - --config
       - /etc/mongo.conf
+networks:
+  default:
+    external:
+      name: workbench

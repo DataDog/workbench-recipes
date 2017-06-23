@@ -4,3 +4,7 @@ services:
     image: "redis:${version}"
     labels:
         com.datadoghq.sd.check.id: "redis"
+networks:
+  default:
+    external:
+      name: workbench

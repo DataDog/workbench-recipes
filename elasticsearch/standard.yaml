@@ -44,4 +44,6 @@ volumes:
     driver: local
 
 networks:
-  esnet:
+  default:
+    external:
+      name: workbench

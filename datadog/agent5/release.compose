@@ -10,3 +10,7 @@ services:
     environment:
       API_KEY: ${dd_api_key}
       SD_BACKEND: docker
+networks:
+  default:
+    external:
+      name: workbench
