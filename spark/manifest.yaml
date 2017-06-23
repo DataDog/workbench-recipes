@@ -1,0 +1,15 @@
+name: spark
+flavors:
+  standalone:
+    description: Spark instance with 1 master and 1 slave
+    compose_file: standalone.compose
+    options:
+      version:
+        description: Image version to run
+        values:
+          #- "1.5.2"
+          #- "1.6.3"
+          - "2.0.2"
+          - "2.1.0"
+          - "2.1.1"
+        default: "2.1.1"

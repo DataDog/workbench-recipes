@@ -1,0 +1,33 @@
+version: '2'
+services:
+  zookeeper:
+    image: "zookeeper:latest"
+    labels:
+        com.datadoghq.sd.check.id: "spark-standalone"
+
+  spark-master:
+    build:
+      context: .
+      args:
+        - ARG_SPARK_ROLE=master
+        - ARG_SPARK_VERSION=${version}
+    labels:
+        com.datadoghq.sd.check.id: "spark-standalone"
+    depends_on:
+      - zookeeper
+
+  spark-worker:
+    build:
+      context: .
+      args:
+        - ARG_SPARK_ROLE=worker
+        - ARG_SPARK_VERSION=${version}
+    labels:
+        com.datadoghq.sd.check.id: "spark-standalone"
+    depends_on:
+      - spark-master
+
+networks:
+  default:
+    external:
+      name: workbench
