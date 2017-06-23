@@ -1,3 +1,7 @@
+docker_images:
+  - spark-master
+  - spark-worker
+
 init_config:
 
 instances:

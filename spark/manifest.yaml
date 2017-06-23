@@ -5,10 +5,10 @@ flavors:
     compose_file: standalone.compose
     options:
       version:
-        description: Image version to run
+        description: Spark version to run
         values:
-          #- "1.5.2"
-          #- "1.6.3"
+          - "1.5.2"
+          - "1.6.3"
           - "2.0.2"
           - "2.1.0"
           - "2.1.1"

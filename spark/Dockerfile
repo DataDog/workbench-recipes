@@ -5,7 +5,7 @@ RUN apk add bash
 
 ARG ARG_SPARK_ROLE
 ARG ARG_SPARK_VERSION=2.1.1
-ARG ARG_HADOOP_VERSION=2.7
+ARG ARG_HADOOP_VERSION=2.6
 
 ENV SPARK_ROLE $ARG_SPARK_ROLE
 ENV SPARK_VERSION $ARG_SPARK_VERSION
@@ -15,6 +15,7 @@ ENV SPARK_URL "http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-h
 RUN echo "Installing spark-${SPARK_VERSION}-hadoop-${HADOOP_VERSION} from ${SPARK_URL}"
 
 RUN wget ${SPARK_URL} -O /tmp/spark.tgz
+#COPY spark-2.1.0-bin-hadoop2.6.tgz /tmp/spark.tgz
 
 RUN tar -xzf /tmp/spark.tgz -C /usr/local/
 RUN cd /usr/local && ln -s spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} spark
