@@ -34,8 +34,8 @@ instances:
   # Set `pending_task_stats` to false if you use such a service.
 
   - url: http://%%host%%:%%port%%
-     username: elastic
-     password: changeme
+    username: elastic
+    password: changeme
     # cluster_stats: false
     # pshard_stats: false
     # pending_task_stats: true
