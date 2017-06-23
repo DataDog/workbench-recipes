@@ -1,3 +1,7 @@
+docker_images:
+  - elasticsearch1
+  - elasticsearch2
+
 init_config:
 
 instances:
