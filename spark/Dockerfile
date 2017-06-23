@@ -26,4 +26,6 @@ RUN chmod 777 /provision/bootstrap.sh
 ENV SPARK_HOME /usr/local/spark
 WORKDIR /usr/local/spark
 
+EXPOSE 8080
+
 CMD ["/provision/bootstrap.sh"]

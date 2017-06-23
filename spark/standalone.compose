@@ -20,8 +20,6 @@ services:
       args:
         - ARG_SPARK_ROLE=worker
         - ARG_SPARK_VERSION=${version}
-    labels:
-        com.datadoghq.sd.check.id: "spark-standalone"
     depends_on:
       - spark-master
 

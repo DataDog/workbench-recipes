@@ -4,11 +4,11 @@ This workbench creates dummy data that are inserted in `dummy` database in `rest
 ## Running
 * Launching mongodb standalone instance
 ```bash
-COMPOSE_FILE=standalone.yaml version=3.5 docker-compose up
+COMPOSE_FILE=standalone.compose version=3.5 docker-compose up
 ```
 * Launching mongodb replicated set
 ```bash
-COMPOSE_FILE=replicas3.yaml version=3.5 docker-compose up
+COMPOSE_FILE=replicas3.compose version=3.5 docker-compose up
 ```
 
 ## Useful commands
