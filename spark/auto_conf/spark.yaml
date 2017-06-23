@@ -29,7 +29,7 @@ instances:
     # To enable monitoring of a Standalone Spark cluster, the spark cluster
     # mode must be set. Uncomment the cluster mode that applies.
     # spark_cluster_mode: spark_yarn_mode
-    # spark_cluster_mode: spark_standalone_mode
+    spark_cluster_mode: spark_standalone_mode
     # spark_cluster_mode: spark_mesos_mode
 
     # To use an older (versions prior to 2.0) Standalone Spark cluster,
@@ -40,7 +40,7 @@ instances:
     # spark_proxy_enabled: false
 
     # A Required friendly name for the cluster.
-    # cluster_name: MySparkCluster
+    cluster_name: MySparkCluster
 
     # Optional tags to be applied to every emitted metric.
     # tags:
