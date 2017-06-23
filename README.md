@@ -1,12 +1,12 @@
-# INTERNAL DATADOG PROJECT
+# ONGOING DATADOG HACKATHLON PROJECT
 
-# Datadog workbench recipes
+# Datadog Integration Workbench recipes
 
-This repo holds the docker-compose recipes for use with the `workbench` tool.
+This repo holds the docker-compose recipes for use with the [workbench](https://github.com/DataDog/workbench-tooling/) tool.
 
 # Repository structure
 
-- Every folder is a separate target software, called an **integration**
+- Every folder is a separate target software, called an **recipe**
 - Each integration will provide one or several docker-compose yaml files, called **flavors**
 - Each flavor can accept one or several **options**, as environment variables
 
@@ -18,8 +18,3 @@ Recipes can provide auto_conf templates to be used by the agent for autodiscover
 # Manifest format
 
 To be defined (yaml-based)
-
-
-# Agent autodiscovery templates
-
-To be defined
