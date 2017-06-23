@@ -1,11 +1,15 @@
 name: elasticsearch
 flavors:
-  - name: standard
+  standard:
     description: One elasticsearch instance with dummy data
     compose_file: standard.yaml
     options:
-      - name: version
+      version:
         description: Image version to run
         values:
-          - 5.4.2
-        default: 5.4.2
+          - "5.0.2"
+          - "5.1.2"
+          - "5.2.2"
+          - "5.3.3"
+          - "5.4.2"
+        default: "5.4.2"
