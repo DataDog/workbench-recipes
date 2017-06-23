@@ -1,0 +1,12 @@
+version: '2'
+services:
+  agent5-release:
+    image: "datadog/docker-dd-agent:${version}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/:/host/proc/:ro
+      - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
+      - ${conf_d_path}:/conf.d:ro
+    environment:
+      API_KEY: ${dd_api_key}
+      SD_BACKEND: docker

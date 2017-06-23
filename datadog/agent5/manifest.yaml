@@ -1,0 +1,18 @@
+name: agent5
+type: agent
+flavors:
+  release:
+    description: docker-dd-agent image
+    compose_file: release.compose
+    options:
+      version:
+        description: Image tag
+        values:
+          - latest
+          - latest-jmx
+          - latest-alpine
+          - "..."
+        default: latest
+    settings:
+      dd_api_key: required
+      conf_d_path: required
