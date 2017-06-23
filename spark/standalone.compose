@@ -2,8 +2,6 @@ version: '2'
 services:
   zookeeper:
     image: "zookeeper:latest"
-    labels:
-        com.datadoghq.sd.check.id: "spark-standalone"
 
   spark-master:
     build:

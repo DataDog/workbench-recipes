@@ -1,6 +1,5 @@
 docker_images:
-  - spark-master
-  - spark-worker
+  - spark-standalone
 
 init_config:
 
