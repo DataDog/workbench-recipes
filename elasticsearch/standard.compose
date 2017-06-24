@@ -3,11 +3,12 @@ services:
   elasticsearch1:
     image: "docker.elastic.co/elasticsearch/elasticsearch:${version}"
     labels:
-        com.datadoghq.sd.check.id: "elasticsearch-dummydata"
+        com.datadoghq.sd.check.id: "elasticsearch"
     container_name: elasticsearch1
     environment:
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
+      - network.host=__site__
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
     ulimits:
       memlock:
@@ -18,10 +19,9 @@ services:
       - esdata1:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
-    networks:
-      - esnet
   elasticsearch2:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.2
+    image: "docker.elastic.co/elasticsearch/elasticsearch:${version}"
+    container_name: elasticsearch2
     environment:
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
@@ -34,15 +34,11 @@ services:
     mem_limit: 1g
     volumes:
       - esdata2:/usr/share/elasticsearch/data
-    networks:
-      - esnet
-
 volumes:
   esdata1:
     driver: local
   esdata2:
     driver: local
-
 networks:
   default:
     external:

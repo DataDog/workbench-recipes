@@ -1,6 +1,5 @@
 docker_images:
-  - elasticsearch1
-  - elasticsearch2
+  - elasticsearch
 
 init_config:
 
@@ -33,11 +32,11 @@ instances:
   # Some managed ElasticSearch services (e.g. AWS ElasticSearch) do not expose this endpoint.
   # Set `pending_task_stats` to false if you use such a service.
 
-  - url: http://%%host%%:%%port%%
+  - url: http://%%host%%:%%port_0%%
     username: elastic
     password: changeme
-    # cluster_stats: false
-    # pshard_stats: false
+    cluster_stats: true
+    pshard_stats: true
     # pending_task_stats: true
     # ssl_verify: false
     # ssl_cert: /path/to/cert.pem
