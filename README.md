@@ -21,8 +21,8 @@ Recipes can provide auto_conf templates to be used by the agent for autodiscover
 |----------|--------|-------------|-----------|
 | README.md | Markdown | usage instructions / tips for the recipe | Optional |
 | manifest.yaml | See below | recipe metadata, to be used by `workbench` | Required |
-| *.compose | [docker-compose v2 or v2.1](https://docs.docker.com/compose/compose-file/compose-file-v2/) | flavor description as a valid docker-compose file | Required |
-| auto_conf/*.yaml | yaml | [autodiscovery templates](http://docs.datadoghq.com/guides/autodiscovery/) for dd-agent | Required if not in dd-agent defaults |
+| *.compose | [docker-compose](https://docs.docker.com/compose/compose-file/compose-file-v2/) | flavor description as a valid docker-compose v2 or v2.1 file | Required |
+| auto_conf/*.yaml | yaml | [autodiscovery templates](http://docs.datadoghq.com/guides/autodiscovery/) for dd-agent. Required if not provided by the defaul dd-agent distribution | Required |
 
 # Manifest format
 
