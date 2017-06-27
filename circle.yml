@@ -1,0 +1,9 @@
+dependencies:
+  post:
+    - pip install git+https://github.com/DataDog/workbench-tooling.git
+
+test:
+  override:
+    - mkdir -p ~/.local/share/DataDog
+    - ln -s ~/workbench-recipes ~/.local/share/DataDog/
+    - workbench lint
