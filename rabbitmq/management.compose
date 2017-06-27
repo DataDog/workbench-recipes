@@ -1,0 +1,27 @@
+version: '2.1'
+services:
+  rabbitmq:
+    image: "rabbitmq:${version}-management"
+    ports:
+      - 15672 # management port
+    labels:
+        com.datadoghq.sd.check.id: "rabbitmq-testqueues"
+    healthcheck:
+      test: ["CMD-SHELL", "rabbitmqctl status | grep 'http,15672' || exit 1"] # wait for management port to be up
+      interval: 1s
+      timeout: 5s
+      retries: 5
+
+  queues-provision:
+    image: "python:2.7-alpine"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    volumes:
+      - ./provision/:/provision/:ro
+    command: sh -c "apk add --update curl && /provision/set_up_queues.sh || exit 1"
+
+networks:
+  default:
+    external:
+      name: workbench

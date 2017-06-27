@@ -1,0 +1,13 @@
+name: rabbitmq
+flavors:
+  management:
+    description: Rabbitmq with the management module
+    compose_file: management.compose
+    options:
+      version:
+        description: Image version to run
+        values:
+          - "3.6"
+          - "3.5"
+          - "3.4"
+        default: "3.6"
