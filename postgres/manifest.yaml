@@ -1,0 +1,15 @@
+name: postgres
+flavors:
+  management:
+    description: postgres sql database
+    compose_file: postgres.compose
+    options:
+      version:
+        description: Image version to run
+        values:
+          - "9.2"
+          - "9.3"
+          - "9.4"
+          - "9.5"
+          - "9.6"
+        default: "9.6"
