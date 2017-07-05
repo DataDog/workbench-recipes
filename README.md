@@ -48,7 +48,7 @@ Recipe manifest files are **yaml** files with the following structure:
 | Name | Type | Description | Required? |
 |------|------|-------------|-----------|
 | description | string | option description to display | Required |
-| values | array of strings | valid values for this option | Optional |
+| values | array of strings | possible values an option can take | Optional |
 | default | string | default value to use if not specified | Optional |
 
 # Tips and tricks
