@@ -1,0 +1,12 @@
+version: '2'
+services:
+  jmx-template_in_labels:
+    build: .
+    labels:
+      service-discovery.datadoghq.com/check_names: '["jmx"]'
+      service-discovery.datadoghq.com/init_configs: '[{}]'
+      service-discovery.datadoghq.com/instances: '[{"host": "%%host%%", "port": "%%port%%"}]'
+networks:
+  default:
+    external:
+      name: workbench

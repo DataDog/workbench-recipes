@@ -3,3 +3,6 @@ flavors:
   helloworld:
     description: Simple "hello world" java app with JMX enabled
     compose_file: helloworld.compose
+  template_in_labels:
+    description: JMX app with autoconf template in the container labels (5.17+ only)
+    compose_file: template_in_labels.compose
