@@ -4,24 +4,19 @@ services:
     image: "docker.elastic.co/elasticsearch/elasticsearch:${version}"
     labels:
         com.datadoghq.sd.check.id: "elasticsearch"
-    container_name: elasticsearch1
+    ports:
+      - 9200
     environment:
       - cluster.name=docker-cluster
       - bootstrap.memory_lock=true
-      - network.host=__site__
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - network.host=_eth0_,_local_
+      - "ES_JAVA_OPTS=-Xms256m -Xmx256m"
     ulimits:
       memlock:
         soft: -1
         hard: -1
-    mem_limit: 1g
-    volumes:
-      - esdata:/usr/share/elasticsearch/data
-    ports:
-      - 9200:9200
-volumes:
-  esdata:
-    driver: local
+    mem_limit: 600m
+
 networks:
   default:
     external:

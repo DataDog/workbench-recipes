@@ -1,7 +1,7 @@
 name: elasticsearch
 flavors:
   standalone:
-    description: One elasticsearch instance
+    description: One elasticsearch instance (see README.md)
     compose_file: standalone.compose
     options:
       version:
@@ -14,7 +14,7 @@ flavors:
           - "5.4.2"
         default: "5.4.2"
   standard:
-    description: Two elasticsearch nodes
+    description: Two elasticsearch nodes (see README.md)
     compose_file: standard.compose
     options:
       version:
