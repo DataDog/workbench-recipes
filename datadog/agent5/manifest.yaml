@@ -16,3 +16,18 @@ flavors:
     settings:
       dd_api_key: required
       conf_d_path: required
+  dev:
+    description: dev-dd-agent image
+    compose_file: dev.compose
+    options:
+      version:
+        description: Image tag
+      log_level:
+        description: Log level
+        values:
+          - DEBUG
+          - INFO
+        default: DEBUG
+    settings:
+      dd_api_key: required
+      conf_d_path: required
