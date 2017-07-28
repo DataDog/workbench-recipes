@@ -1,10 +1,13 @@
+docker_images:
+  - mysql
+
 init_config:
 
 instances:
-  - server: localhost
+  - server: "%%host%%"
     user: root
     pass: defaultpass
-    # port: 3306             # Optional
+    port: "%%port%%"             # Optional
     # sock: /path/to/sock    # Connect via Unix Socket
     # defaults_file: my.cnf  # Alternate configuration mechanism
     # connect_timeout: None  # Optional integer seconds
