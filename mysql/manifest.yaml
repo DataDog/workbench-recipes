@@ -1,0 +1,14 @@
+name: mysql
+flavors:
+  standalone:
+    description: One empty mysql instance
+    compose_file: standalone.compose
+    options:
+      version:
+        description: Image version to run
+        values:
+          - "5.5"
+          - "5.6"
+          - "5.7"
+          - "8.0"
+        default: "5.7"
