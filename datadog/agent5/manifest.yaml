@@ -11,7 +11,6 @@ flavors:
           - latest
           - latest-jmx
           - latest-alpine
-          - "..."
         default: latest
     settings:
       dd_api_key: required
@@ -22,6 +21,7 @@ flavors:
     options:
       version:
         description: Image tag
+        default: master
       log_level:
         description: Log level
         values:
@@ -31,3 +31,4 @@ flavors:
     settings:
       dd_api_key: required
       conf_d_path: required
+    dev_mode: true

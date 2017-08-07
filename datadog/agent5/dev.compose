@@ -7,6 +7,7 @@ services:
       - /proc/:/host/proc/:ro
       - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
       - ${conf_d_path}:/conf.d:ro
+      - ${integrations_core}:/etc/dd-agent/checks.d:ro
     environment:
       API_KEY: ${dd_api_key}
       SD_BACKEND: docker
