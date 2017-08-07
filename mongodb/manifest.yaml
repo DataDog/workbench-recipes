@@ -7,6 +7,7 @@ flavors:
       version:
         description: Image version to run
         values:
+          - "2.6.9"
           - "3.0"
           - "3.2"
           - "3.4"
@@ -20,6 +21,7 @@ flavors:
       version:
         description: Image version to run
         values:
+          - "2.6.9"
           - "3.0"
           - "3.2"
           - "3.4"
