@@ -1,0 +1,12 @@
+version: '2'
+services:
+  nginx:
+    image: "nginx"
+    labels:
+        com.datadoghq.sd.check_names: '["http_check"]'
+        com.datadoghq.sd.init_configs: '[{}]'
+        com.datadoghq.sd.instances: '[{"name": "My service", "url": "http://%%host%%", "timeout": 1}]'
+networks:
+  default:
+    external:
+      name: workbench
