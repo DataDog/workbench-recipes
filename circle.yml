@@ -1,5 +1,6 @@
 dependencies:
   post:
+    - pip install docker-compose
     - pip install git+https://github.com/DataDog/workbench-tooling.git
 
 test:
