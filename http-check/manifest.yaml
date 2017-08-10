@@ -1,0 +1,5 @@
+name: http-check
+flavors:
+  nginx:
+    description: One nginx with basic http-check (Agent 5.17+)
+    compose_file: nginx.compose
