@@ -3,9 +3,9 @@ services:
   nginx:
     image: "nginx"
     labels:
-        com.datadoghq.sd.check_names: '["http_check"]'
-        com.datadoghq.sd.init_configs: '[{}]'
-        com.datadoghq.sd.instances: '[{"name": "My service", "url": "http://%%host%%", "timeout": 1}]'
+        com.datadoghq.ad.check_names: '["http_check"]'
+        com.datadoghq.ad.init_configs: '[{}]'
+        com.datadoghq.ad.instances: '[{"name": "My service", "url": "http://%%host%%", "timeout": 1}]'
 networks:
   default:
     external:

@@ -3,9 +3,9 @@ services:
   jmx-template_in_labels:
     build: .
     labels:
-      com.datadoghq.sd.check_names: '["jmx"]'
-      com.datadoghq.sd.init_configs: '[{}]'
-      com.datadoghq.sd.instances: '[{"host": "%%host%%", "port": "%%port%%"}]'
+      com.datadoghq.ad.check_names: '["jmx"]'
+      com.datadoghq.ad.init_configs: '[{}]'
+      com.datadoghq.ad.instances: '[{"host": "%%host%%", "port": "%%port%%"}]'
 networks:
   default:
     external:
