@@ -1,6 +1,6 @@
 version: '2'
 services:
-  agent5-release:
+  agent5-dev:
     image: "datadog/dev-dd-agent:${version}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
