@@ -1,0 +1,21 @@
+version: '2'
+services:
+  cassandra:
+    image: "cassandra:${version}"
+    labels:
+        com.datadoghq.sd.check.id: "cassandra"
+    volumes:
+      - ./docker-custom-entrypoint.sh:/docker-custom-entrypoint.sh
+      - ./jmxremote.access:/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/management/jmxremote.access
+      - ./jmxremote.access:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/management/jmxremote.access
+    environment:
+      - "LOCAL_JMX=no"
+      # set JVM memory limit or each node will take 4Go
+      - "MAX_HEAP_SIZE=128M"
+      - "HEAP_NEWSIZE=24M"
+    entrypoint: ["/docker-custom-entrypoint.sh"]
+
+networks:
+  default:
+    external:
+      name: workbench

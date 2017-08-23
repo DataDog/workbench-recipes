@@ -1,0 +1,26 @@
+name: cassandra
+flavors:
+  standalone:
+    description: One cassandra instance.
+    compose_file: standalone.compose
+    options:
+      version:
+        description: Image version to run
+        values:
+          - "2.1"
+          - "2.2"
+          - "3.0"
+          - "3.11"
+        default: "latest"
+  cluster:
+    description: A cluster of 3 cassandra nodes
+    compose_file: cluster.compose
+    options:
+      version:
+        description: Image version to run
+        values:
+          - "2.1"
+          - "2.2"
+          - "3.0"
+          - "3.11"
+        default: "latest"
