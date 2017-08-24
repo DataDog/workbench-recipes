@@ -42,6 +42,7 @@ Recipe manifest files are **yaml** files with the following structure:
 | description | string | flavor description to display | Required |
 | compose_file | string | relative path to the `docker-compose` file | Required |
 | options | dict | options to pass as environment variables to `docker-compose` | Optional |
+| dev_mode | boolean | activate `dev_mode` for this flave (default: `false`. See [Dev mode](#dev-mode) | Optional |
 
 ### Option properties
 
@@ -52,6 +53,16 @@ Recipe manifest files are **yaml** files with the following structure:
 | default | string | default value to use if not specified | Optional |
 
 # Tips and tricks
+
+### Dev mode
+
+Dev mode is intended to ease development of integration.
+
+You may require `dev_mode` in your recipes by setting the **Flavor properties**
+"dev_mode" to `true`.
+
+If you do so, some environment variable will be available in you. To learn more
+on this mode see [Integration Workbench](https://github.com/DataDog/workbench-tooling#dev-mode).
 
 ### Compose files
 
