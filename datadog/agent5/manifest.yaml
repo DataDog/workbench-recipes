@@ -7,11 +7,6 @@ flavors:
     options:
       version:
         description: Image tag
-        values:
-          - latest
-          - latest-jmx
-          - latest-alpine
-          - "..."
         default: latest
     settings:
       dd_api_key: required
