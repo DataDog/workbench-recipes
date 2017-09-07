@@ -8,6 +8,18 @@ flavors:
       version:
         description: Image tag
         default: latest
+      log_level:
+        description: Log level
+        values:
+          - DEBUG
+          - INFO
+        default: DEBUG
+      log_stdout:
+        description: Log to container log_stdout
+        values:
+          - "no"
+          - "yes"
+        default: "no"
     settings:
       dd_api_key: required
       conf_d_path: required
@@ -23,6 +35,12 @@ flavors:
           - DEBUG
           - INFO
         default: DEBUG
+      log_stdout:
+        description: Log to container log_stdout
+        values:
+          - "no"
+          - "yes"
+        default: "no"
     settings:
       dd_api_key: required
       conf_d_path: required

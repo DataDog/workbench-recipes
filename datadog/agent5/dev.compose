@@ -11,6 +11,7 @@ services:
       API_KEY: ${dd_api_key}
       SD_BACKEND: docker
       DD_LOG_LEVEL: ${log_level}
+      LOGS_STDOUT: ${log_stdout}
 networks:
   default:
     external:
