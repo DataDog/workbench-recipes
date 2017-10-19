@@ -5,6 +5,5 @@ dependencies:
 
 test:
   override:
-    - mkdir -p ~/.local/share/DataDog
-    - ln -s ~/workbench-recipes ~/.local/share/DataDog/
+    - workbench conf set dev_recipes_path $PWD
     - workbench lint
