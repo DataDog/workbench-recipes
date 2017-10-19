@@ -3,7 +3,7 @@ flavors:
   standalone:
     description: One mongo instance with dummy data
     compose_file: standalone.compose
-    options:
+    options: &common_options
       version:
         description: Image version to run
         values:
@@ -16,12 +16,4 @@ flavors:
   replicas3:
     description: 3 mongo replicaset with dummy data
     compose_file: 3replicas.compose
-    options:
-      version:
-        description: Image version to run
-        values:
-          - "3.0"
-          - "3.2"
-          - "3.4"
-          - "3.5"
-        default: "3.5"
+    options: *common_options

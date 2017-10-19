@@ -3,7 +3,7 @@ flavors:
   standalone:
     description: One elasticsearch instance (see README.md)
     compose_file: standalone.compose
-    options:
+    options: &common_options
       version:
         description: Image version to run
         values:
@@ -16,13 +16,4 @@ flavors:
   standard:
     description: Two elasticsearch nodes (see README.md)
     compose_file: standard.compose
-    options:
-      version:
-        description: Image version to run
-        values:
-          - "5.0.2"
-          - "5.1.2"
-          - "5.2.2"
-          - "5.3.3"
-          - "5.4.2"
-        default: "5.4.2"
+    options: *common_options

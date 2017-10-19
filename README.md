@@ -53,6 +53,10 @@ Recipe manifest files are **yaml** files with the following structure:
 
 # Tips and tricks
 
+### Manifests
+
+- You can use [YAML anchors](http://www.yaml.org/spec/1.2/spec.html#id2785586) to share common properties between flavors. See the [redis manifest](redis/manifest.yaml) for example.
+
 ### Compose files
 
 - To allow dd-agent to monitor the containers, they must be connected into the **workbench** network. Please look at existing flavors
