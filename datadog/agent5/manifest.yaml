@@ -4,7 +4,7 @@ flavors:
   release:
     description: docker-dd-agent image
     compose_file: release.compose
-    options:
+    options: &common_options
       version:
         description: Image tag
         default: latest
@@ -20,27 +20,11 @@ flavors:
           - "no"
           - "yes"
         default: "no"
-    settings:
+    settings: &common_settings
       dd_api_key: required
       conf_d_path: required
   dev:
     description: dev-dd-agent image
     compose_file: dev.compose
-    options:
-      version:
-        description: Image tag
-      log_level:
-        description: Log level
-        values:
-          - DEBUG
-          - INFO
-        default: DEBUG
-      log_stdout:
-        description: Log to container log_stdout
-        values:
-          - "no"
-          - "yes"
-        default: "no"
-    settings:
-      dd_api_key: required
-      conf_d_path: required
+    options: *common_options
+    settings: *common_settings

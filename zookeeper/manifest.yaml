@@ -3,7 +3,7 @@ flavors:
   standalone:
     description: One zookeeper instance
     compose_file: standalone.compose
-    options:
+    options: &common_options
       version:
         description: Image version to run
         values:
@@ -14,10 +14,4 @@ flavors:
   replicas3:
     description: 3 zookeeper replicaset
     compose_file: 3replicas.compose
-    options:
-      version:
-        description: Image version to run
-        values:
-          - "3.4"
-          - "3.3"
-        default: "3.4"
+    options: *common_options
