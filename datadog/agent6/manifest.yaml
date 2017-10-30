@@ -1,0 +1,27 @@
+name: agent6
+type: agent
+flavors:
+  release:
+    description: agent6/dogstatsd6 image
+    compose_file: release.compose
+    options:
+      image:
+        description: Docker image name
+        values:
+          - "agent"
+          - "agent-dev"
+          - "dogstatsd"
+          - "dogstatsd-dev"
+        default: "agent"
+      version:
+        description: Image tag
+        default: latest
+      log_level:
+        description: Log level
+        values:
+          - DEBUG
+          - INFO
+        default: DEBUG
+    settings:
+      dd_api_key: required
+      conf_d_path: required
