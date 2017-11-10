@@ -6,7 +6,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /proc/:/host/proc/:ro
       - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
-      - ${conf_d_path}:/conf.d:ro
+      - ${conf_d_path}/auto_conf:/conf.d:ro
     environment:
       DD_API_KEY: ${dd_api_key}
       DD_LOG_LEVEL: ${log_level}
