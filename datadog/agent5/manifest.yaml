@@ -28,3 +28,4 @@ flavors:
     compose_file: dev.compose
     options: *common_options
     settings: *common_settings
+    dev_mode: true
