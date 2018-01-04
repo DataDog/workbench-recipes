@@ -1,0 +1,12 @@
+name: php-fpm
+flavors:
+  nginx:
+    description: php-fpm behind a nginx server
+    compose_file: fpm-nginx.compose
+    options: &common_options
+      version:
+        description: Image version to run
+        values:
+          - "5.6-fpm"
+          - "7.0-fpm"
+        default: "7.0-fpm"
