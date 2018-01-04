@@ -1,0 +1,20 @@
+version: '2'
+services:
+  php_fpm:
+    image: "php:${version}"
+    volumes:
+        - ./provision/app:/app
+        - ./provision/php-fpm.conf:/usr/local/etc/php-fpm.d/php-fpm.conf
+  nginx:
+    image: nginx:latest
+    volumes:
+        - ./provision/app:/app
+        - ./provision/nginx.conf:/etc/nginx/conf.d/default.conf
+    labels:
+        com.datadoghq.sd.check.id: "php_fpm"
+
+
+networks:
+  default:
+    external:
+      name: workbench
