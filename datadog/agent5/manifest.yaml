@@ -23,6 +23,7 @@ flavors:
     settings: &common_settings
       dd_api_key: required
       conf_d_path: required
+    dev_mode: true
   dev:
     description: dev-dd-agent image
     compose_file: dev.compose
