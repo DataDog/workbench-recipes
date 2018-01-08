@@ -13,6 +13,10 @@ flavors:
           - "5.3.3"
           - "5.4.2"
         default: "5.4.2"
+  standalone_fs_stats:
+    description: One elasticsearch instance with /tmp/elastic/ mount as the data volume (see README.md)
+    compose_file: standalone_data.compose
+    options: *common_options
   standard:
     description: Two elasticsearch nodes (see README.md)
     compose_file: standard.compose
