@@ -1,18 +1,18 @@
-version: '2'
+version: '2.1'
 services:
   agent5-release:
-    image: "datadog/docker-dd-agent:${version}"
+    image: "datadog/docker-dd-agent:${version:-latest}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /proc/:/host/proc/:ro
       - /sys/fs/cgroup/:/host/sys/fs/cgroup:ro
-      - ${conf_d_path}:/conf.d:ro
-      - ${integrations_core}:/checks.d:ro
+      - ${conf_d_path:-.}:/conf.d:ro
+      - ${integrations_core:-.}:/checks.d:ro
     environment:
       API_KEY: ${dd_api_key}
       SD_BACKEND: docker
-      DD_LOG_LEVEL: ${log_level}
-      LOGS_STDOUT: ${log_stdout}
+      DD_LOG_LEVEL: ${log_level:-DEBUG}
+      LOGS_STDOUT: ${log_stdout:-no}
 networks:
   default:
     external:

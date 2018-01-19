@@ -1,7 +1,7 @@
-version: '2'
+version: '2.1'
 services:
   agent6-release:
-    image: "datadog/${image}:${version}"
+    image: "datadog/${image:-agent}:${version:-latest}"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /proc/:/host/proc/:ro
