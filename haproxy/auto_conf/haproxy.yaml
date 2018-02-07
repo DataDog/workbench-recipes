@@ -1,0 +1,13 @@
+docker_images:
+  - haproxy
+
+init_config:
+
+instances:
+  #- url: "http://%%host%%:3835/stats"
+  - url: "http://127.0.0.1:8888/stats"
+    username: datadog
+    password: datadog
+    # The (optional) headers to use when requesting stats.
+    headers:
+      test: "21"
