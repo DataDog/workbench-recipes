@@ -1,4 +1,4 @@
-docker_images:
+ad_identifiers:
   - php_fpm
 
 init_config:
