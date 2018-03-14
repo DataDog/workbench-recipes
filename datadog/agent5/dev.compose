@@ -13,6 +13,7 @@ services:
       SD_BACKEND: docker
       DD_LOG_LEVEL: ${log_level:-DEBUG}
       LOGS_STDOUT: ${log_stdout:-no}
+      DD_PROCESS_AGENT_ENABLED: "true"
 networks:
   default:
     external:

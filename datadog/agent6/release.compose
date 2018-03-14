@@ -10,6 +10,7 @@ services:
     environment:
       DD_API_KEY: ${dd_api_key}
       DD_LOG_LEVEL: ${log_level}
+      DD_PROCESS_AGENT_ENABLED: "true"
 networks:
   default:
     external:
