@@ -1,0 +1,15 @@
+version: '2.1'
+services:
+  haproxy:
+    image: "haproxy:${version:-1.8}-alpine"
+    ports:
+      - 3835
+    labels:
+        com.datadoghq.sd.check.id: "haproxy"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+
+networks:
+  default:
+    external:
+      name: workbench

@@ -1,0 +1,18 @@
+name: haproxy
+flavors:
+  open:
+    description: open haproxy (no password)
+    compose_file: haproxy.compose
+    options: &common_options
+      version:
+        description: Image version to run
+        values:
+          - "1.5"
+          - "1.6"
+          - "1.7"
+          - "1.8"
+        default: "1.8"
+  password:
+    description: haproxy with a password for stats interface
+    compose_file: haproxy-password.compose
+    options: *common_options

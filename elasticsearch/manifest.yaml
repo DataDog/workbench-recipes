@@ -7,6 +7,9 @@ flavors:
       version:
         description: Image version to run
         values:
+          - "2.4.6"
+          - "2.3.5"
+          - "2.2.2"
           - "5.0.2"
           - "5.1.2"
           - "5.2.2"
